@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angularjs")
+    <script src="~/Scripts/App/Core/Router.js"></script>
+    <script src="~/Scripts/App/Core/App.js"></script>
+    <script src="~/Scripts/App/Home/Home.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

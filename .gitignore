@@ -183,6 +183,8 @@ UpgradeLog*.htm
 FakesAssemblies/
 
 # App Scripts
-Scripts/App/Core/*.js
-Scripts/App/Core/*.js.map
+NamelessInteractive.Insured.Web/[Ss]cripts/[Aa]pp/**/*.js
+NamelessInteractive.Insured.Web/[Ss]cripts/[Aa]pp/**/*.js.map
 
+
+*.GhostDoc.xml
