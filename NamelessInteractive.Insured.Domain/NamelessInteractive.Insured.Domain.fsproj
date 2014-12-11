@@ -43,6 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Shared.fs" />
+    <Compile Include="Document.fs" />
+    <Compile Include="Address.fs" />
+    <Compile Include="Party.fs" />
+    <Compile Include="Individual.fs" />
+    <Compile Include="Organisation.fs" />
     <Compile Include="Customer.fs" />
     <Compile Include="Risk.fs" />
     <Compile Include="Product.fs" />

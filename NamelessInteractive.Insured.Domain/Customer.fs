@@ -1,6 +1,7 @@
 ﻿module NamelessInteractive.Insured.Domain.Customer
 
 open NamelessInteractive.Insured.Domain.Shared
+open NamelessInteractive.Insured.Domain.Address
 
 type CommercialCustomerContact = 
     {

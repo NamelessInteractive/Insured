@@ -2,35 +2,15 @@
 
 open System
 
-type PostalCode = PostalCode of string
-
-type Address = 
-    {
-        Line1: string
-        Line2: string
-        Line3: string
-        Line4: string
-        PostalCode: PostalCode
-    }
-
-type AddressInfo = 
-    {
-        Primary: Address
-        Additional: Address list
-    }
+type Identifier = Identifier of int
 
 type TelephoneNumber = TelephoneNumber of string
 
 type EmailAddress = EmailAddress of string
-
-type PersonName = 
-    {
-        FirstName: string
-        LastName: string
-    }
+type WebsiteUrl = WebsiteUrl of string
 
 type ValidityInformation =
     {
         StartDate: DateTime
-        EndDate: DateTime
+        EndDate: DateTime option
     }
