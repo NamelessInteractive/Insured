@@ -10,7 +10,6 @@
             $scope: any;
             constructor($scope) {
                 this.$scope = $scope;
-                this.$scope.Test = "Hello World";
             }
         }
     }

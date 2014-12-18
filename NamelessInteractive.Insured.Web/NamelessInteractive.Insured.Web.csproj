@@ -121,11 +121,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\Mvc\HomeController.cs" />
-    <Compile Include="Controllers\Api\ValuesController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -925,7 +920,11 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\App\Core\App.ts" />
     <TypeScriptCompile Include="Scripts\App\Core\Router.ts" />
+    <TypeScriptCompile Include="Scripts\App\Core\ViewModels\Identifier.ts" />
+    <TypeScriptCompile Include="Scripts\App\Core\ViewModels\Option.ts" />
     <TypeScriptCompile Include="Scripts\App\Home\Home.ts" />
+    <TypeScriptCompile Include="Scripts\App\Shared\ViewModels\AddressViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\App\Shared\ViewModels\CountryViewModel.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
@@ -955,6 +954,23 @@
     <Content Include="Scripts\Lib\angular-animate.min.js.map" />
     <Content Include="Scripts\Lib\angular.min.js.map" />
     <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Address\Index.cshtml" />
+    <Content Include="Views\Organisation\Display.cshtml" />
+    <Content Include="Views\Organisation\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NamelessInteractive.Insured.Web.Controllers.Api\NamelessInteractive.Insured.Web.Controllers.Api.fsproj">
+      <Project>{431f7826-31ad-4299-8992-144b5cd7cccb}</Project>
+      <Name>NamelessInteractive.Insured.Web.Controllers.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NamelessInteractive.Insured.Web.Controllers.Mvc\NamelessInteractive.Insured.Web.Controllers.Mvc.fsproj">
+      <Project>{68ea58d3-b1c7-4af8-b39c-7d376caa8c46}</Project>
+      <Name>NamelessInteractive.Insured.Web.Controllers.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NamelessInteractive.Insured.Web.Server\NamelessInteractive.Insured.Web.Server.fsproj">
+      <Project>{4aa283ca-9de2-402b-bf30-92cc4d53aeb6}</Project>
+      <Name>NamelessInteractive.Insured.Web.Server</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

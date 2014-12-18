@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Optimization;
+using System.Collections.Generic;
 
 namespace NamelessInteractive.Insured.Web
 {
@@ -24,6 +25,8 @@ namespace NamelessInteractive.Insured.Web
                 "~/Scripts/lib/angular.js",
                 "~/Scripts/lib/angular-resource.js",
                 "~/Scripts/lib/angular-route.js"));
+
+            
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

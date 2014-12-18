@@ -6,6 +6,7 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <meta name="description" content="The description of my page" />
 </head>
 <body>
     <div class="container body-content">
@@ -14,9 +15,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/angularjs")
-    <script src="~/Scripts/App/Core/Router.js"></script>
-    <script src="~/Scripts/App/Core/App.js"></script>
-    <script src="~/Scripts/App/Home/Home.js"></script>
+    @Scripts.Render("~/bundles/app")
     @RenderSection("scripts", required: false)
 </body>
 </html>

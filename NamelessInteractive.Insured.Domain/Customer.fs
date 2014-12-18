@@ -2,6 +2,7 @@
 
 open NamelessInteractive.Insured.Domain.Shared
 open NamelessInteractive.Insured.Domain.Address
+open NamelessInteractive.Insured.Domain.Individual
 
 type CommercialCustomerContact = 
     {

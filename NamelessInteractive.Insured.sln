@@ -7,6 +7,22 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "NamelessInteractive.Insured
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NamelessInteractive.Insured.Web", "NamelessInteractive.Insured.Web\NamelessInteractive.Insured.Web.csproj", "{D269B8C9-8F5F-4284-97D3-9D2DAB73BBEC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{A1A2A79B-5DD6-428D-9BF9-C3A7007B9C22}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "NamelessInteractive.Insured.Web.Server", "NamelessInteractive.Insured.Web.Server\NamelessInteractive.Insured.Web.Server.fsproj", "{4AA283CA-9DE2-402B-BF30-92CC4D53AEB6}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "NamelessInteractive.Insured.Web.Controllers.Api", "NamelessInteractive.Insured.Web.Controllers.Api\NamelessInteractive.Insured.Web.Controllers.Api.fsproj", "{431F7826-31AD-4299-8992-144B5CD7CCCB}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "NamelessInteractive.Insured.Web.Controllers.Mvc", "NamelessInteractive.Insured.Web.Controllers.Mvc\NamelessInteractive.Insured.Web.Controllers.Mvc.fsproj", "{68EA58D3-B1C7-4AF8-B39C-7D376CAA8C46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{9288485A-CC7A-4F01-8B6B-6FDCD3BC91E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mvc", "Mvc", "{FE77E16C-3AC0-4722-B33C-4413B202911F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{77ADAA13-97A8-4CEA-98F4-E75519852857}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{C408567A-8CFA-4743-845C-E0DD23FF10AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +37,30 @@ Global
 		{D269B8C9-8F5F-4284-97D3-9D2DAB73BBEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D269B8C9-8F5F-4284-97D3-9D2DAB73BBEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D269B8C9-8F5F-4284-97D3-9D2DAB73BBEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AA283CA-9DE2-402B-BF30-92CC4D53AEB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AA283CA-9DE2-402B-BF30-92CC4D53AEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AA283CA-9DE2-402B-BF30-92CC4D53AEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AA283CA-9DE2-402B-BF30-92CC4D53AEB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{431F7826-31AD-4299-8992-144B5CD7CCCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{431F7826-31AD-4299-8992-144B5CD7CCCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{431F7826-31AD-4299-8992-144B5CD7CCCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{431F7826-31AD-4299-8992-144B5CD7CCCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68EA58D3-B1C7-4AF8-B39C-7D376CAA8C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68EA58D3-B1C7-4AF8-B39C-7D376CAA8C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68EA58D3-B1C7-4AF8-B39C-7D376CAA8C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68EA58D3-B1C7-4AF8-B39C-7D376CAA8C46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{42F34DEB-18A0-4BA7-96EB-D3ADDF0C69BB} = {9288485A-CC7A-4F01-8B6B-6FDCD3BC91E7}
+		{D269B8C9-8F5F-4284-97D3-9D2DAB73BBEC} = {77ADAA13-97A8-4CEA-98F4-E75519852857}
+		{4AA283CA-9DE2-402B-BF30-92CC4D53AEB6} = {77ADAA13-97A8-4CEA-98F4-E75519852857}
+		{431F7826-31AD-4299-8992-144B5CD7CCCB} = {C408567A-8CFA-4743-845C-E0DD23FF10AE}
+		{68EA58D3-B1C7-4AF8-B39C-7D376CAA8C46} = {FE77E16C-3AC0-4722-B33C-4413B202911F}
+		{FE77E16C-3AC0-4722-B33C-4413B202911F} = {A1A2A79B-5DD6-428D-9BF9-C3A7007B9C22}
+		{77ADAA13-97A8-4CEA-98F4-E75519852857} = {A1A2A79B-5DD6-428D-9BF9-C3A7007B9C22}
+		{C408567A-8CFA-4743-845C-E0DD23FF10AE} = {A1A2A79B-5DD6-428D-9BF9-C3A7007B9C22}
 	EndGlobalSection
 EndGlobal
