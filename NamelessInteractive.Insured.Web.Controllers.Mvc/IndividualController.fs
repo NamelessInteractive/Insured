@@ -2,6 +2,6 @@
 
 open System.Web.Mvc
 
-type OrganisationController() =
+type IndividualController() =
     inherit SimpleViewController()
-    member this.Test() = this.PartialView()
+

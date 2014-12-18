@@ -1,1 +1,3 @@
-﻿<h1>Organisation Display</h1>
+﻿@model Organisation.Organisation
+<h1>Organisation Display ({{Organisation.Id.toString()}})</h1>
+@Html.DisplayFor(model => model.CompanyName)

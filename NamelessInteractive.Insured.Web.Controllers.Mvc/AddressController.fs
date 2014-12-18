@@ -3,6 +3,5 @@
 open System.Web.Mvc
 
 type AddressController() = 
-    inherit Controller()
-    member this.Index() =
-        this.PartialView()
+    inherit SimpleViewController()
+    

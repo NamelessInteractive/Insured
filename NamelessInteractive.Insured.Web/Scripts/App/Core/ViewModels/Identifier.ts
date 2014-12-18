@@ -6,6 +6,10 @@
                 this.Identifier = identifier;
             }
 
+            toString() {
+                return this.Identifier;
+            }
+
             static Parse(value: any) {
                 return new Identifier(value.Fields[0]);
             }

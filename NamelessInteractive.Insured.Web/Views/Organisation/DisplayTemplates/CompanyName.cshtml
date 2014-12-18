@@ -1,0 +1,5 @@
+﻿@model Organisation.CompanyName
+<div class="form-group row">
+    @Html.NamedValue(model => model.RegisteredName,"{{Organisation.CompanyName.RegisteredName}}")
+    @Html.NamedValue(model => model.TradingName, "{{Organisation.CompanyName.TradingName}}")
+</div>

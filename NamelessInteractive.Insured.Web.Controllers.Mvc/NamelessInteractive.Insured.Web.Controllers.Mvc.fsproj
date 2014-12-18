@@ -49,10 +49,13 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
+    <Compile Include="Helpers\HtmlHelpers.fs" />
     <Compile Include="HomeController.fs" />
+    <Compile Include="SimpleViewController.fs" />
     <Compile Include="AddressController.fs" />
     <Content Include="packages.config" />
     <Compile Include="OrganisationController.fs" />
+    <Compile Include="IndividualController.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Web.Infrastructure">

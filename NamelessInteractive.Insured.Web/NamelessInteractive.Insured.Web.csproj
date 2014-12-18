@@ -113,14 +113,8 @@
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -923,6 +917,7 @@
     <TypeScriptCompile Include="Scripts\App\Core\ViewModels\Identifier.ts" />
     <TypeScriptCompile Include="Scripts\App\Core\ViewModels\Option.ts" />
     <TypeScriptCompile Include="Scripts\App\Home\Home.ts" />
+    <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\Organisation.ts" />
     <TypeScriptCompile Include="Scripts\App\Shared\ViewModels\AddressViewModel.ts" />
     <TypeScriptCompile Include="Scripts\App\Shared\ViewModels\CountryViewModel.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
@@ -954,11 +949,21 @@
     <Content Include="Scripts\Lib\angular-animate.min.js.map" />
     <Content Include="Scripts\Lib\angular.min.js.map" />
     <Content Include="Views\Home\Home.cshtml" />
-    <Content Include="Views\Address\Index.cshtml" />
+    <Content Include="Views\Address\Display.cshtml" />
     <Content Include="Views\Organisation\Display.cshtml" />
     <Content Include="Views\Organisation\Edit.cshtml" />
+    <Content Include="Views\Address\Edit.cshtml" />
+    <Content Include="Views\Individual\Display.cshtml" />
+    <Content Include="Views\Individual\Edit.cshtml" />
+    <Content Include="Views\Organisation\DisplayTemplates\CompanyName.cshtml" />
+    <Content Include="Views\Organisation\Test.cshtml" />
+    <Content Include="Views\Organisation\EditorTemplates\CompanyName.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NamelessInteractive.Insured.Domain\NamelessInteractive.Insured.Domain.fsproj">
+      <Project>{42f34deb-18a0-4ba7-96eb-d3addf0c69bb}</Project>
+      <Name>NamelessInteractive.Insured.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NamelessInteractive.Insured.Web.Controllers.Api\NamelessInteractive.Insured.Web.Controllers.Api.fsproj">
       <Project>{431f7826-31ad-4299-8992-144b5cd7cccb}</Project>
       <Name>NamelessInteractive.Insured.Web.Controllers.Api</Name>

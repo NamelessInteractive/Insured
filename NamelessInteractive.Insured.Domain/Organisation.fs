@@ -3,6 +3,7 @@
 open NamelessInteractive.Insured.Domain.Shared
 open NamelessInteractive.Insured.Domain.Document
 open NamelessInteractive.Insured.Domain.Party
+open System.ComponentModel.DataAnnotations
 
 type Industry =
     {
@@ -55,7 +56,10 @@ type IncomeTaxNumber = IncomeTaxNumber of string
 
 type CompanyName = 
     {
+        [<Display(Name="Registered Name")>]
+        [<Required>]
         RegisteredName: string
+        [<Display(Name="Trading Name")>]
         TradingName: string
     }
 
