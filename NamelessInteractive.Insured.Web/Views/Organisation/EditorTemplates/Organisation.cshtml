@@ -1,0 +1,11 @@
+﻿@model Organisation.Organisation
+@Html.EditorFor(model => model.CompanyName)
+<div class="form-group row">
+    @Html.EditorFor(model => model.CompanyRegistrationNumber, "CompanyRegistrationNumber")
+    @Html.EditorFor(model => model.VATNumber, "VATNumber")
+</div>
+<div class="form-group row">
+    @Html.EditorFor(model => model.PBOReferenceNumber, "PBOReferenceNumber")
+    @Html.EditorFor(model => model.IncomeTaxNumber, "IncomeTaxNumber")
+</div>
+

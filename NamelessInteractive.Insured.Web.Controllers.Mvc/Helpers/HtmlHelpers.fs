@@ -31,16 +31,20 @@ type HtmlHelpers() =
         HtmlString(htmlString)
 
     static member private ValidationAttributes(this:HtmlHelper<'TModel>,name, metaData:ModelMetadata) =
-        let providers = ModelValidatorProviders.Providers.GetValidators(metaData,this.ViewContext) |> Seq.map(fun a -> a.GetClientValidationRules())
-        ()
+        let rules = ModelValidatorProviders.Providers.GetValidators(metaData,this.ViewContext) |> Seq.map(fun a -> a.GetClientValidationRules()) |> Seq.collect(fun p -> p)
+        let res = System.Collections.Generic.Dictionary<string,string>()
+        rules |> Seq.iter(fun r -> res.Add(r.ValidationType,r.ValidationType))
+        res
 
     static member private NgTextBox(this: HtmlHelper<'TModel>,name,metaData, template) =
         let fullHtmlFieldName = this.ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldName(name)
         let tagBuilder = new TagBuilder("input")
         tagBuilder.MergeAttribute("type", "text")
         tagBuilder.MergeAttribute("name", fullHtmlFieldName,true)
+        tagBuilder.AddCssClass("form-control")
         tagBuilder.GenerateId(fullHtmlFieldName)
-        //tagBuilder.MergeAttributes(HtmlHelpers.ValidationAttributes(name,metaData))
+        let test= HtmlHelpers.ValidationAttributes(this,name,metaData)
+        tagBuilder.MergeAttributes(HtmlHelpers.ValidationAttributes(this,name,metaData))
         tagBuilder.MergeAttribute("ng-model", template)
         MvcHtmlString(tagBuilder.ToString(TagRenderMode.SelfClosing))
         

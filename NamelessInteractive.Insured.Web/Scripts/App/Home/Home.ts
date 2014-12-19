@@ -8,14 +8,18 @@
                 templateUrl : HomeController.TemplateUrl,
             };
             $scope: any;
-            constructor($scope) {
+            constructor($scope, organisationService: InsuredApp.Services.Organisation.OrganisationService) {
+                var that = this;
                 this.$scope = $scope;
-                this.$scope.Organisation = ViewModels.Organisation.Organisation.Test();
+                organisationService.Get(100).$promise.then(function (data) {
+                    that.$scope.Organisation = ViewModels.Organisation.Organisation.Parse(data);
+                });
+                //this.$scope.Organisation = ViewModels.Organisation.Organisation.Test();
             }
         }
     }
 }
 
-Application.controller('HomeController', function HomeController($scope) {
-    return new InsuredApp.Controllers.HomeController($scope);
+Application.controller('HomeController', function HomeController($scope, OrganisationService: InsuredApp.Services.Organisation.OrganisationService) {
+    return new InsuredApp.Controllers.HomeController($scope, OrganisationService);
 })

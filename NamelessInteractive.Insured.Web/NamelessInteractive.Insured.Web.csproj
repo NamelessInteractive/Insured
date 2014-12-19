@@ -44,6 +44,11 @@
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="FSharp.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\.NETFramework\v4.0\4.3.1.0\FSharp.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -113,11 +118,20 @@
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Shared\DisplayTemplates\" />
+    <Folder Include="Views\Shared\EditorTemplates\" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\App\AngularRules.css">
+      <DependentUpon>AngularRules.less</DependentUpon>
+    </Content>
+    <Content Include="Content\App\AngularRules.min.css">
+      <DependentUpon>AngularRules.css</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -903,7 +917,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\App\Site.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -915,11 +929,31 @@
     <TypeScriptCompile Include="Scripts\App\Core\App.ts" />
     <TypeScriptCompile Include="Scripts\App\Core\Router.ts" />
     <TypeScriptCompile Include="Scripts\App\Core\ViewModels\Identifier.ts" />
-    <TypeScriptCompile Include="Scripts\App\Core\ViewModels\Option.ts" />
     <TypeScriptCompile Include="Scripts\App\Home\Home.ts" />
+    <TypeScriptCompile Include="Scripts\App\Organisation\Services\Organisation.ts" />
+    <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\BEELevel.ts" />
+    <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\BEELevelDocument.ts" />
+    <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\CompanyName.ts" />
+    <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\CompanyRegistrationNumber.ts" />
+    <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\Director.ts" />
+    <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\IncomeTaxNumber.ts" />
+    <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\Industry.ts" />
+    <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\IndustryClassification.ts" />
     <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\Organisation.ts" />
-    <TypeScriptCompile Include="Scripts\App\Shared\ViewModels\AddressViewModel.ts" />
-    <TypeScriptCompile Include="Scripts\App\Shared\ViewModels\CountryViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\OrganisationType.ts" />
+    <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\PBOReferenceNumber.ts" />
+    <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\VATNumber.ts" />
+    <TypeScriptCompile Include="Scripts\App\Party\ViewModels\Party.ts" />
+    <TypeScriptCompile Include="Scripts\App\Shared\Utilities\CurrencyUtilities.ts" />
+    <TypeScriptCompile Include="Scripts\App\Shared\Utilities\DateUtilities.ts" />
+    <TypeScriptCompile Include="Scripts\App\Shared\Utilities\ParseUtilities.ts" />
+    <TypeScriptCompile Include="Scripts\App\Shared\ViewModels\Address.ts" />
+    <TypeScriptCompile Include="Scripts\App\Shared\ViewModels\Country.ts" />
+    <TypeScriptCompile Include="Scripts\App\Shared\ViewModels\Document.ts" />
+    <TypeScriptCompile Include="Scripts\App\Shared\ViewModels\EmailAddress.ts" />
+    <TypeScriptCompile Include="Scripts\App\Shared\ViewModels\TelephoneNumber.ts" />
+    <TypeScriptCompile Include="Scripts\App\Shared\ViewModels\ValidityInformation.ts" />
+    <TypeScriptCompile Include="Scripts\App\Shared\ViewModels\WebsiteUrl.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
@@ -935,6 +969,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\App\AngularRules.less" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\Lib\version.json" />
     <Content Include="Scripts\Lib\errors.json" />
@@ -958,6 +993,19 @@
     <Content Include="Views\Organisation\DisplayTemplates\CompanyName.cshtml" />
     <Content Include="Views\Organisation\Test.cshtml" />
     <Content Include="Views\Organisation\EditorTemplates\CompanyName.cshtml" />
+    <Content Include="Views\Organisation\DisplayTemplates\CompanyRegistrationNumber.cshtml" />
+    <Content Include="Views\Organisation\DisplayTemplates\VATNumber.cshtml" />
+    <Content Include="Views\Organisation\DisplayTemplates\Organisation.cshtml" />
+    <Content Include="Views\Organisation\DisplayTemplates\PBOReferenceNumber.cshtml" />
+    <Content Include="Views\Organisation\DisplayTemplates\IncomeTaxNumber.cshtml" />
+    <Content Include="Views\Organisation\EditorTemplates\CompanyRegistrationNumber.cshtml" />
+    <Content Include="Views\Organisation\EditorTemplates\IncomeTaxNumber.cshtml" />
+    <Content Include="Views\Organisation\EditorTemplates\PBOReferenceNumber.cshtml" />
+    <Content Include="Views\Organisation\EditorTemplates\VATNumber.cshtml" />
+    <Content Include="Views\Organisation\EditorTemplates\Organisation.cshtml" />
+    <Content Include="Views\Organisation\DisplayTemplates\EmailAddress.cshtml" />
+    <Content Include="Views\Organisation\DisplayTemplates\Website.cshtml" />
+    <Content Include="Views\Organisation\DisplayTemplates\Turnover.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NamelessInteractive.Insured.Domain\NamelessInteractive.Insured.Domain.fsproj">

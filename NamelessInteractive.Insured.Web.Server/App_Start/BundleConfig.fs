@@ -9,7 +9,7 @@ let private GetAppScripts() =
     let files = System.IO.Directory.GetFiles(scriptsPath, "*.js", IO.SearchOption.AllDirectories)
     files |> Array.map (fun path -> path.Replace(scriptsPath,"~/Scripts/App/").Replace("\\","/"))
 
-let RegisterBundles(bundles: BundleCollection) =
+let RegisterBundles(bundles: BundleCollection) :unit =
     let AddBundle = bundles.Add
     ScriptBundle("~/bundles/jquery").Include([|"~/Scripts/lib/jquery-{version}.js"|])
     |> AddBundle
@@ -26,5 +26,8 @@ let RegisterBundles(bundles: BundleCollection) =
     ScriptBundle("~/bundles/app").Include(GetAppScripts())
     |> AddBundle
 
-    StyleBundle("~/Content/css").Include("~/Content/bootstrap.css", "~/Content/site.css")
+    StyleBundle("~/Content/css").Include([|"~/Content/bootstrap.css"|])
+    |> AddBundle
+
+    StyleBundle("~/Content/AppCss").Include("~/Content/App/AngularRules.css", "~/Content/App/site.css")
     |> AddBundle

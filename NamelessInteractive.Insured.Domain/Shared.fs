@@ -2,12 +2,12 @@
 
 open System
 
-type Identifier = Identifier of int
+type Identifier = Identifier of Identifier :int
 
-type TelephoneNumber = TelephoneNumber of string
+type TelephoneNumber = TelephoneNumber of TelephoneNumber:string
 
-type EmailAddress = EmailAddress of string
-type WebsiteUrl = WebsiteUrl of string
+type EmailAddress = EmailAddress of EmailAddress: string
+type WebsiteUrl = WebsiteUrl of WebsiteUrl :string
 
 type ValidityInformation =
     {

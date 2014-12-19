@@ -5,9 +5,11 @@ module InsuredApp {
         static Dependencies = ['ngResource', 'ngRoute'];
         static ConfigureApplication($routeProvider) {
             Router.ConfigureRoutes($routeProvider);
+            
         }
 
-        static RunApplication() {
+        static RunApplication($rootScope) {
+            $rootScope.CurrencyUtilities = Utilities.Shared.CurrencyUtilities;
         }
     }
 

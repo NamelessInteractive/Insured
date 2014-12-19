@@ -49,10 +49,10 @@ type Director =
         Party: Party
     }
 
-type CompanyRegistrationNumber = CompanyRegistrationNumber of string
-type VATNumber = VATNumber of string
-type PBOReferenceNumber = PBOReferenceNumber of string
-type IncomeTaxNumber = IncomeTaxNumber of string
+type CompanyRegistrationNumber = CompanyRegistrationNumber of CompanyRegistrationNumber:string
+type VATNumber = VATNumber of VATNumber :string
+type PBOReferenceNumber = PBOReferenceNumber of PBOReferenceNumber:string
+type IncomeTaxNumber = IncomeTaxNumber of IncomeTaxNumber:string
 
 type CompanyName = 
     {
@@ -67,19 +67,40 @@ type Organisation =
     {
         Id: Identifier
         CompanyName: CompanyName
+        [<Display(Name="Company Registration Number")>]
         CompanyRegistrationNumber: CompanyRegistrationNumber option
+        [<Display(Name="VAT Number")>]
         VATNumber: VATNumber option
+        [<Display(Name="PBO Reference Number")>]
         PBOReferenceNumber: PBOReferenceNumber option
+        [<Display(Name="Income Tax Number")>]
         IncomeTaxNumber: IncomeTaxNumber option
+        [<Display(Name="Email Address")>]
         EmailAddress: EmailAddress option
+        [<Display(Name="Website")>]
         Website: WebsiteUrl option
+        [<Display(Name="Turnover")>]
         Turnover: decimal option
+        [<Display(Name="Foreign")>]
         ForeignIndicator: bool
+        [<Display(Name="Listed")>]
         ListedIndicator: bool
+        [<Display(Name="Parent Organisation")>]
         ParentOrganisation: Organisation option
+        [<Display(Name="Organisation Type")>]
         OrganisationType: OrganisationType
+        [<Display(Name="Industry")>]
         Industry: Industry option
+        [<Display(Name="Industry Classification")>]
         IndustryClassification: IndustryClassification option
-        Director: Director seq
+        [<Display(Name="Directors")>]
+        Directors: Director seq
+        [<Display(Name="BEE Level Documents")>]
         BEELevelDocuments: BEELevelDocument seq
     }
+    [<Display(Name="Parent Organisation")>]
+    member this.ParentOrganisationName 
+        with get() = 
+            match this.ParentOrganisation with
+            | None -> "None"
+            | Some(org) -> org.CompanyName.RegisteredName

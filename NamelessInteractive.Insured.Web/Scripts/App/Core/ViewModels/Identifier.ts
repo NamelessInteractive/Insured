@@ -1,17 +1,20 @@
 ﻿module InsuredApp {
     export module ViewModels {
-        export class Identifier {
-            Identifier: number;
-            constructor(identifier: number) {
-                this.Identifier = identifier;
-            }
+        export module Core {
 
-            toString() {
-                return this.Identifier;
-            }
+            export class Identifier {
+                Identifier: number;
+                constructor(identifier: number) {
+                    this.Identifier = identifier;
+                }
 
-            static Parse(value: any) {
-                return new Identifier(value.Fields[0]);
+                toString() {
+                    return this.Identifier;
+                }
+
+                static Parse(value: any) {
+                    return new Identifier(value.Fields[0]);
+                }
             }
         }
     }

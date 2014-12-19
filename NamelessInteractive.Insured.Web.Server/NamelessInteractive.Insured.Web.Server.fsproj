@@ -130,6 +130,13 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NamelessInteractive.Insured.Infrastructure\NamelessInteractive.Insured.Infrastructure.fsproj">
+      <Name>NamelessInteractive.Insured.Infrastructure</Name>
+      <Project>{11623d9a-860d-4744-9743-6551a33949b2}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

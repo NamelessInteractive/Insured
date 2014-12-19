@@ -1,0 +1,29 @@
+﻿@model Organisation.Organisation
+@Html.DisplayFor(model => model.CompanyName)
+<div class="form-group row">
+    @Html.DisplayFor(model => model.CompanyRegistrationNumber, "CompanyRegistrationNumber")
+    @Html.DisplayFor(model => model.VATNumber, "VATNumber")
+</div>
+<div class="form-group row">
+    @Html.DisplayFor(model => model.PBOReferenceNumber, "PBOReferenceNumber")
+    @Html.DisplayFor(model => model.IncomeTaxNumber, "IncomeTaxNumber")
+</div>
+<div class="form-group row">
+    @Html.DisplayFor(model => model.EmailAddress,"EmailAddress")
+    @Html.DisplayFor(model => model.Website, "Website")
+</div>
+<div class="form-group row">
+    @Html.DisplayFor(model => model.Turnover,"Turnover")
+</div>
+<div class="form-group row">
+    @Html.NamedValue(model => model.ForeignIndicator,"{{Organisation.ForeignIndicator}}")
+    @Html.NamedValue(model => model.ListedIndicator, "{{Organisation.ListedIndicator}}")
+</div>
+<div class="form-group row">
+    @Html.NamedValue(model => model.ParentOrganisationName, "{{Organisation.ParentOrganisationName}}")
+    @Html.NamedValue(model => model.OrganisationType, "{{Organisation.OrganisationType.Description}}")
+</div>
+<div class="form-group row">
+    @Html.NamedValue(model => model.Industry, "{{Organisation.Industry.Description}}")
+    @Html.NamedValue(model => model.IndustryClassification, "{{Organisation.IndustryClassification.Description}}")
+</div>
