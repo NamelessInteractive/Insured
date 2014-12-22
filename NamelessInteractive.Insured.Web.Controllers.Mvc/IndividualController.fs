@@ -4,4 +4,4 @@ open System.Web.Mvc
 
 type IndividualController() =
     inherit SimpleViewController()
-
+    member this.Test() = this.PartialView()

@@ -2,6 +2,8 @@
     export module ViewModels {
         export module Organisation {
             export class Organisation {
+                private $scope: any;
+                private LookupService: Services.Organisation.OrganisationLookupService;
                 Id: Core.Identifier;
                 CompanyName: CompanyName;
                 CompanyRegistrationNumber: CompanyRegistrationNumber;
@@ -20,19 +22,23 @@
                 IndustryClassification: IndustryClassification;
                 Directors: Array<Director>;
                 BEELevelDocuments: Array<BEELevelDocument>;
-                constructor() {
+                Lookups: OrganisationLookups;
+                
+                constructor(OrganisationLookupService: Services.Organisation.OrganisationLookupService) {
+                    this.LookupService = OrganisationLookupService;
                     this.CompanyRegistrationNumber = new CompanyRegistrationNumber(null);
                     this.VATNumber = new VATNumber(null);
                     this.PBOReferenceNumber = new PBOReferenceNumber(null);
                     this.IncomeTaxNumber = new IncomeTaxNumber(null);
+                    this.Lookups = new OrganisationLookups(this.LookupService);
                 }
 
                 private static IfNull(nullTestValue, value, defaultValue) {
                     return Utilities.Shared.ParseUtilities.IfNull(nullTestValue, value, defaultValue);
                 }
 
-                static Parse(data: Organisation) {
-                    var result = new Organisation();
+                static Parse(OrganisationLookupService: Services.Organisation.OrganisationLookupService, data: Organisation) {
+                    var result = new Organisation(OrganisationLookupService);
                     result.Id = new Core.Identifier(data.Id.Identifier);
                     result.CompanyName = CompanyName.Create(data.CompanyName.RegisteredName, data.CompanyName.TradingName);
                     result.CompanyRegistrationNumber.CompanyRegistrationNumber = Organisation.IfNull(data.CompanyRegistrationNumber, data.CompanyRegistrationNumber.CompanyRegistrationNumber, null);
@@ -52,15 +58,6 @@
                     if (data.IndustryClassification != null && data.IndustryClassification != undefined) {
                         result.IndustryClassification = IndustryClassification.Create(data.IndustryClassification.Id.Identifier, data.IndustryClassification.Code, data.IndustryClassification.Description, data.IndustryClassification.Category, data.IndustryClassification.IndustryCode);
                     }
-                    return result;
-                }
-
-                static Test() {
-                    var result = new Organisation();
-                    result.Id = new Core.Identifier(100);
-                    result.CompanyName = new CompanyName();
-                    result.CompanyName.TradingName = "Trading Company";
-                    result.CompanyName.RegisteredName = "Registered Company";
                     return result;
                 }
             }

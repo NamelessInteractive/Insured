@@ -1,4 +1,4 @@
-﻿namespace NamelessInteractive.Insured.Web.Controllers.Api
+﻿namespace NamelessInteractive.Insured.Web.Controllers.Api.Organisation
 
 open System.Web.Http
 open NamelessInteractive.Insured.Domain

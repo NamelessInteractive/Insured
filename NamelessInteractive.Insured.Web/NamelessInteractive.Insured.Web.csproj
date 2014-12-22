@@ -930,7 +930,18 @@
     <TypeScriptCompile Include="Scripts\App\Core\Router.ts" />
     <TypeScriptCompile Include="Scripts\App\Core\ViewModels\Identifier.ts" />
     <TypeScriptCompile Include="Scripts\App\Home\Home.ts" />
+    <TypeScriptCompile Include="Scripts\App\Individual\Services\Individual.ts" />
+    <TypeScriptCompile Include="Scripts\App\Individual\ViewModels\Gender.ts" />
+    <TypeScriptCompile Include="Scripts\App\Individual\ViewModels\IdentityNumber.ts" />
+    <TypeScriptCompile Include="Scripts\App\Individual\ViewModels\Individual.ts" />
+    <TypeScriptCompile Include="Scripts\App\Individual\ViewModels\IndividualLookups.ts" />
+    <TypeScriptCompile Include="Scripts\App\Individual\ViewModels\MaritalStatus.ts" />
+    <TypeScriptCompile Include="Scripts\App\Individual\ViewModels\PassportNumber.ts" />
+    <TypeScriptCompile Include="Scripts\App\Individual\ViewModels\PersonName.ts" />
+    <TypeScriptCompile Include="Scripts\App\Individual\ViewModels\Race.ts" />
+    <TypeScriptCompile Include="Scripts\App\Individual\ViewModels\Salutation.ts" />
     <TypeScriptCompile Include="Scripts\App\Organisation\Services\Organisation.ts" />
+    <TypeScriptCompile Include="Scripts\App\Organisation\Services\OrganisationLookups.ts" />
     <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\BEELevel.ts" />
     <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\BEELevelDocument.ts" />
     <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\CompanyName.ts" />
@@ -940,6 +951,7 @@
     <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\Industry.ts" />
     <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\IndustryClassification.ts" />
     <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\Organisation.ts" />
+    <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\OrganisationLookups.ts" />
     <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\OrganisationType.ts" />
     <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\PBOReferenceNumber.ts" />
     <TypeScriptCompile Include="Scripts\App\Organisation\ViewModels\VATNumber.ts" />
@@ -1006,6 +1018,18 @@
     <Content Include="Views\Organisation\DisplayTemplates\EmailAddress.cshtml" />
     <Content Include="Views\Organisation\DisplayTemplates\Website.cshtml" />
     <Content Include="Views\Organisation\DisplayTemplates\Turnover.cshtml" />
+    <Content Include="Views\Organisation\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Views\Organisation\EditorTemplates\Website.cshtml" />
+    <Content Include="Views\Organisation\EditorTemplates\Turnover.cshtml" />
+    <Content Include="Views\Individual\Test.cshtml" />
+    <Content Include="Views\Individual\DisplayTemplates\PersonName.cshtml" />
+    <Content Include="Views\Individual\EditorTemplates\PersonName.cshtml" />
+    <Content Include="Views\Individual\DisplayTemplates\Individual.cshtml" />
+    <Content Include="Views\Individual\EditorTemplates\Individual.cshtml" />
+    <Content Include="Views\Individual\DisplayTemplates\IdentityNumber.cshtml" />
+    <Content Include="Views\Individual\DisplayTemplates\PassportNumber.cshtml" />
+    <Content Include="Views\Individual\EditorTemplates\IdentityNumber.cshtml" />
+    <Content Include="Views\Individual\EditorTemplates\PassportNumber.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NamelessInteractive.Insured.Domain\NamelessInteractive.Insured.Domain.fsproj">

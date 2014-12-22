@@ -3,8 +3,8 @@
         export module Shared {
             export class CurrencyUtilities {
                 static FormatCurrency(value) {
-                    if (value == null || value == undefined) {
-                        return null;
+                    if (value == null || value == undefined || value=="") {
+                        return "Unknown";
                     }
                     var
                         res, d, t, s, i, j, n: any = "" + value;

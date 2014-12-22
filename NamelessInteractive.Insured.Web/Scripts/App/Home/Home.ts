@@ -2,24 +2,21 @@
     export module Controllers {
         export class HomeController {
             static Name = "HomeController";
-            static TemplateUrl = "/Organisation/Test";
+            static TemplateUrl = "/Individual/Test";
             static Route: ng.route.IRoute = {
                 controller : HomeController.Name,
                 templateUrl : HomeController.TemplateUrl,
             };
             $scope: any;
-            constructor($scope, organisationService: InsuredApp.Services.Organisation.OrganisationService) {
+            constructor($scope,IndividualService: InsuredApp.Services.Individual.IndividualService) {
                 var that = this;
                 this.$scope = $scope;
-                organisationService.Get(100).$promise.then(function (data) {
-                    that.$scope.Organisation = ViewModels.Organisation.Organisation.Parse(data);
-                });
-                //this.$scope.Organisation = ViewModels.Organisation.Organisation.Test();
+                this.$scope.Individual = IndividualService.Get(100);
             }
         }
     }
 }
 
-Application.controller('HomeController', function HomeController($scope, OrganisationService: InsuredApp.Services.Organisation.OrganisationService) {
-    return new InsuredApp.Controllers.HomeController($scope, OrganisationService);
+Application.controller('HomeController', function HomeController($scope, IndividualService: InsuredApp.Services.Individual.IndividualService) {
+    return new InsuredApp.Controllers.HomeController($scope,IndividualService);
 })

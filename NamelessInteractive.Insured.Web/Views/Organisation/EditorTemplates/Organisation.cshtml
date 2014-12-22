@@ -8,4 +8,22 @@
     @Html.EditorFor(model => model.PBOReferenceNumber, "PBOReferenceNumber")
     @Html.EditorFor(model => model.IncomeTaxNumber, "IncomeTaxNumber")
 </div>
-
+<div class="form-group row">
+    @Html.EditorFor(model => model.EmailAddress,"EmailAddress")
+    @Html.EditorFor(model => model.Website, "Website")
+</div>
+<div class="form-group row">
+    @Html.EditorFor(model => model.Turnover,"Turnover")
+</div>
+<div class="form-group row">
+    @Html.LabelledCheckbox(model => model.ForeignIndicator, "Organisation.ForeignIndicator")
+    @Html.LabelledCheckbox(model => model.ListedIndicator, "Organisation.ListedIndicator")
+</div>
+<div class="form-group row">
+    @Html.NamedValue(model => model.ParentOrganisationName,"{{Organisation.ParentOrganisationName}}")
+    @Html.LabelledDropdown(model => model.OrganisationType, "Organisation.OrganisationType", "lookup as lookup.Description for lookup in Organisation.Lookups.OrganisationTypes")
+</div>
+<div class="form-group row">
+    @Html.LabelledDropdown(model => model.Industry, "Organisation.Industry", "lookup as lookup.Description for lookup in Organisation.Lookups.Industries")
+    @Html.LabelledDropdown(model => model.IndustryClassification, "Organisation.IndustryClassification", "lookup as lookup.Description for lookup in Organisation.Lookups.IndustryClassifications")
+</div>

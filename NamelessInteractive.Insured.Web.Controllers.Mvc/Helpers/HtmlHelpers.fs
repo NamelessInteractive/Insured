@@ -47,6 +47,34 @@ type HtmlHelpers() =
         tagBuilder.MergeAttributes(HtmlHelpers.ValidationAttributes(this,name,metaData))
         tagBuilder.MergeAttribute("ng-model", template)
         MvcHtmlString(tagBuilder.ToString(TagRenderMode.SelfClosing))
+
+    static member private NgCheckbox(this: HtmlHelper<'TModel>,name,metaData, template) =
+        let fullHtmlFieldName = this.ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldName(name)
+        let tagBuilder = new TagBuilder("input")
+        tagBuilder.MergeAttribute("type", "checkbox")
+        tagBuilder.MergeAttribute("name", fullHtmlFieldName,true)
+        tagBuilder.MergeAttribute("ng-click",sprintf "%s=!%s" template template)
+        tagBuilder.MergeAttribute("ng-checked", sprintf "%s==true" template)
+        tagBuilder.AddCssClass("form-control")
+        tagBuilder.GenerateId(fullHtmlFieldName)
+        let test= HtmlHelpers.ValidationAttributes(this,name,metaData)
+        tagBuilder.MergeAttributes(HtmlHelpers.ValidationAttributes(this,name,metaData))
+        MvcHtmlString(tagBuilder.ToString(TagRenderMode.SelfClosing))
+
+    static member private NgDropdown(this: HtmlHelper<'TModel>,name,metaData, template, options) =
+        let fullHtmlFieldName = this.ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldName(name)
+        let tagBuilder = new TagBuilder("select")
+        tagBuilder.MergeAttribute("name", fullHtmlFieldName,true)
+        tagBuilder.MergeAttribute("ng-model",template)
+        if not (System.String.IsNullOrEmpty(options)) then
+            tagBuilder.MergeAttribute("ng-options",options)
+        tagBuilder.AddCssClass("form-control")
+        tagBuilder.GenerateId(fullHtmlFieldName)
+        tagBuilder.InnerHtml <- "<option value=\"\">... Please Select ...</option>"
+        let test= HtmlHelpers.ValidationAttributes(this,name,metaData)
+        tagBuilder.MergeAttributes(HtmlHelpers.ValidationAttributes(this,name,metaData))
+        MvcHtmlString(tagBuilder.ToString(TagRenderMode.Normal))
+        
         
         
 
@@ -63,4 +91,34 @@ type HtmlHelpers() =
                    <div class="col-lg-4"><label for="%s">%s</label></div>
                    <div class="col-lg-8">%s</div>
                    </div>""" id name textBox
+        HtmlString(htmlString)
+
+    [<Extension>]
+    static member LabelledCheckbox<'TModel, 'TValue> (this : HtmlHelper<'TModel>, expression: System.Linq.Expressions.Expression<System.Func<'TModel, 'TValue>>, template) =
+        let metadata = ModelMetadata.FromLambdaExpression(expression,this.ViewData)
+        let fieldName = ExpressionHelper.GetExpressionText(expression)
+        let name = this.DisplayNameFor(expression).ToString()
+        let id = this.IdFor(expression).ToString()
+        let checkBox = HtmlHelpers.NgCheckbox(this,fieldName,metadata, template).ToHtmlString()
+        let htmlString = 
+            sprintf 
+                """<div class="col-lg-6">
+                   <div class="col-lg-4"><label for="%s">%s</label></div>
+                   <div class="col-lg-8">%s</div>
+                   </div>""" id name checkBox
+        HtmlString(htmlString)
+
+    [<Extension>]
+    static member LabelledDropdown<'TModel, 'TValue> (this : HtmlHelper<'TModel>, expression: System.Linq.Expressions.Expression<System.Func<'TModel, 'TValue>>, template, options) =
+        let metadata = ModelMetadata.FromLambdaExpression(expression,this.ViewData)
+        let fieldName = ExpressionHelper.GetExpressionText(expression)
+        let name = this.DisplayNameFor(expression).ToString()
+        let id = this.IdFor(expression).ToString()
+        let dropDown = HtmlHelpers.NgDropdown(this,fieldName,metadata, template,options).ToHtmlString()
+        let htmlString = 
+            sprintf 
+                """<div class="col-lg-6">
+                   <div class="col-lg-4"><label for="%s">%s</label></div>
+                   <div class="col-lg-8">%s</div>
+                   </div>""" id name dropDown
         HtmlString(htmlString)

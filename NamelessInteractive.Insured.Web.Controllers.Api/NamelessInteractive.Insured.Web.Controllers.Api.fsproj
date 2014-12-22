@@ -49,8 +49,12 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
-    <Compile Include="OrganisationController.fs" />
     <Content Include="packages.config" />
+    <Compile Include="Organisation\OrganisationController.fs" />
+    <Compile Include="Organisation\OrganisationTypeController.fs" />
+    <Compile Include="Organisation\IndustryController.fs" />
+    <Compile Include="Organisation\IndustryClassificationController.fs" />
+    <Compile Include="Individual\IndividualController.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -78,8 +82,6 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
       <Private>True</Private>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\NamelessInteractive.Insured.Domain\NamelessInteractive.Insured.Domain.fsproj">
       <Name>NamelessInteractive.Insured.Domain</Name>
       <Project>{42f34deb-18a0-4ba7-96eb-d3addf0c69bb}</Project>

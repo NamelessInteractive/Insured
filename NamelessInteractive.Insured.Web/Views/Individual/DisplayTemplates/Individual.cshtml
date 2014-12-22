@@ -1,0 +1,14 @@
+﻿@model Individual.Individual
+@Html.DisplayFor(model => model.Name)
+<div class="form-group row">
+    @Html.DisplayFor(model => model.IdentityNumber, "IdentityNumber")
+    @Html.DisplayFor(model => model.PassportNumber, "PassportNumber")
+</div>
+<div class="form-group row">
+    @Html.NamedValue(model => model.DateOfBirth, "{{Individual.DateOfBirth}}")
+    @Html.NamedValue(model => model.Gender, "{{Individual.Gender.Description}}")
+</div>
+<div class="form-group row">
+    @Html.NamedValue(model => model.Race, "{{Individual.Race.Description}}")
+    @Html.NamedValue(model => model.MaritalStatus, "{{Individual.MaritalStatus.Description}}")
+</div>

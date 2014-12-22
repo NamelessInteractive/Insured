@@ -1,0 +1,9 @@
+﻿@model Individual.PersonName
+<div class="form-group row">
+    @Html.LabelledTextBox(model => model.FirstName, "Individual.Name.FirstName")
+    @Html.LabelledTextBox(model => model.MiddleName, "Individual.Name.MiddleName")
+</div>
+<div class="form-group row">
+    @Html.LabelledTextBox(model => model.LastName, "Individual.Name.LastName")
+    @Html.LabelledTextBox(model => model.MaidenName, "Individual.Name.MaidenName")
+</div>
