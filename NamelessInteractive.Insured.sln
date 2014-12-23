@@ -31,6 +31,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "NamelessInteractive.Insured.Infrastructure", "NamelessInteractive.Insured.Infrastructure\NamelessInteractive.Insured.Infrastructure.fsproj", "{11623D9A-860D-4744-9743-6551A33949B2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{AA296AE5-AB1F-4EED-BD52-FF46DCBA25B4}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "NamelessInteractive.Insured.Contracts", "NamelessInteractive.Insured.Contracts\NamelessInteractive.Insured.Contracts.fsproj", "{0B0D7A26-AEEA-4FA6-9CB2-20A3BC2A4154}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{2E1D1B63-3797-41F8-A2FE-C646E09D3687}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "NamelessInteractive.Insured.Data", "NamelessInteractive.Insured.Data\NamelessInteractive.Insured.Data.fsproj", "{758B972D-2C2D-462C-8628-4179DDD1365C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +73,14 @@ Global
 		{11623D9A-860D-4744-9743-6551A33949B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11623D9A-860D-4744-9743-6551A33949B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11623D9A-860D-4744-9743-6551A33949B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B0D7A26-AEEA-4FA6-9CB2-20A3BC2A4154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B0D7A26-AEEA-4FA6-9CB2-20A3BC2A4154}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B0D7A26-AEEA-4FA6-9CB2-20A3BC2A4154}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B0D7A26-AEEA-4FA6-9CB2-20A3BC2A4154}.Release|Any CPU.Build.0 = Release|Any CPU
+		{758B972D-2C2D-462C-8628-4179DDD1365C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{758B972D-2C2D-462C-8628-4179DDD1365C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{758B972D-2C2D-462C-8628-4179DDD1365C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{758B972D-2C2D-462C-8628-4179DDD1365C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +96,7 @@ Global
 		{C408567A-8CFA-4743-845C-E0DD23FF10AE} = {A1A2A79B-5DD6-428D-9BF9-C3A7007B9C22}
 		{CDF2059F-CC84-4C59-90F4-F0A58555B05C} = {B5D670BE-4AF9-417A-B35D-2C4AACFA181F}
 		{11623D9A-860D-4744-9743-6551A33949B2} = {6E78849D-DB76-4870-B3E2-C5FE5E47F827}
+		{0B0D7A26-AEEA-4FA6-9CB2-20A3BC2A4154} = {AA296AE5-AB1F-4EED-BD52-FF46DCBA25B4}
+		{758B972D-2C2D-462C-8628-4179DDD1365C} = {2E1D1B63-3797-41F8-A2FE-C646E09D3687}
 	EndGlobalSection
 EndGlobal

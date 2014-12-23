@@ -3,9 +3,10 @@
 open System.Web.Http
 open NamelessInteractive.Insured.Domain
 open NamelessInteractive.Insured.Domain.Individual
+open NamelessInteractive.Insured.Web.Controllers.Api
 
 type IndividualController() =
-    inherit ApiController()
+    inherit ApiControllerBase()
     member this.Get() : Individual seq =
         Seq.empty<Individual>
 

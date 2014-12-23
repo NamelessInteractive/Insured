@@ -82,17 +82,19 @@ type Organisation =
         [<Display(Name="Turnover")>]
         Turnover: decimal option
         [<Display(Name="Foreign")>]
-        ForeignIndicator: bool
+        ForeignIndicator: bool option
         [<Display(Name="Listed")>]
-        ListedIndicator: bool
+        ListedIndicator: bool option
         [<Display(Name="Parent Organisation")>]
         ParentOrganisation: Organisation option
+        [<Display(Name="Country of Operation")>]
+        CountryOperation: Address.Country
         [<Display(Name="Organisation Type")>]
         OrganisationType: OrganisationType
         [<Display(Name="Industry")>]
-        Industry: Industry option
+        Industry: Industry
         [<Display(Name="Industry Classification")>]
-        IndustryClassification: IndustryClassification option
+        IndustryClassification: IndustryClassification
         [<Display(Name="Directors")>]
         Directors: Director seq
         [<Display(Name="BEE Level Documents")>]

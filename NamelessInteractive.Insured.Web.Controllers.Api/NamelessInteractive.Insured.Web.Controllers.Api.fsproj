@@ -50,11 +50,27 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Content Include="packages.config" />
+    <Compile Include="Shared\ApiControllerBase.fs" />
     <Compile Include="Organisation\OrganisationController.fs" />
     <Compile Include="Organisation\OrganisationTypeController.fs" />
     <Compile Include="Organisation\IndustryController.fs" />
     <Compile Include="Organisation\IndustryClassificationController.fs" />
     <Compile Include="Individual\IndividualController.fs" />
+    <Compile Include="Address\CrestaZoneController.fs" />
+    <Compile Include="Address\CountryController.fs" />
+    <Compile Include="Address\ProvinceController.fs" />
+    <Compile Include="Address\AddressController.fs" />
+    <Compile Include="Party\PartyTypeController.fs" />
+    <Compile Include="Party\CreditRatingController.fs" />
+    <Compile Include="Party\LanguageController.fs" />
+    <Compile Include="Party\CurrencyController.fs" />
+    <Compile Include="Party\PartyController.fs" />
+    <Compile Include="Branch\BranchController.fs" />
+    <Compile Include="Business\ClassOfBusinessController.fs" />
+    <Compile Include="Business\LineOfBusinessController.fs" />
+    <Compile Include="Risk\RiskTypeController.fs" />
+    <Compile Include="Product\ProductFrequencyController.fs" />
+    <Compile Include="Product\ProductController.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -82,6 +98,16 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <ProjectReference Include="..\NamelessInteractive.Insured.Contracts\NamelessInteractive.Insured.Contracts.fsproj">
+      <Name>NamelessInteractive.Insured.Contracts</Name>
+      <Project>{0b0d7a26-aeea-4fa6-9cb2-20a3bc2a4154}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\NamelessInteractive.Insured.Data\NamelessInteractive.Insured.Data.fsproj">
+      <Name>NamelessInteractive.Insured.Data</Name>
+      <Project>{758b972d-2c2d-462c-8628-4179ddd1365c}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\NamelessInteractive.Insured.Domain\NamelessInteractive.Insured.Domain.fsproj">
       <Name>NamelessInteractive.Insured.Domain</Name>
       <Project>{42f34deb-18a0-4ba7-96eb-d3addf0c69bb}</Project>

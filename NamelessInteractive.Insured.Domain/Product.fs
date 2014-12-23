@@ -3,10 +3,17 @@
 open NamelessInteractive.Insured.Domain
 open NamelessInteractive.Insured.Domain.Shared
 
-type ProductInformation =
+type ProductFrequency = 
     {
+        Description: string
+    }
+
+type Product =
+    {
+        Id: Identifier
+        Code: string
         Name: string
+        ProductFrequency: ProductFrequency
         ValidityInformation: ValidityInformation
     }
 
-type Product = Product of ProductInformation * validRiskTypes : Risk.RiskTypeInformation

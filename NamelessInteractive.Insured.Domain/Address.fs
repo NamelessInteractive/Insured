@@ -2,7 +2,7 @@
 
 open NamelessInteractive.Insured.Domain.Shared
 
-type PostalCode = PostalCode of string
+type PostalCode = PostalCode of PostalCode: string
 
 type CrestaZone = 
     {
@@ -21,7 +21,7 @@ type Province =
     {
         Id: Identifier
         Code: string
-        Country: Country
+        Name: string
     }
 
 type Address = 
@@ -34,6 +34,7 @@ type Address =
         PostalCode: PostalCode
         CrestaZone: CrestaZone option
         Province: Province
+        Country: Country
     }
 
 type AddressInfo = 

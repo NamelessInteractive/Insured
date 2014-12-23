@@ -1,10 +1,21 @@
 ﻿module NamelessInteractive.Insured.Domain.Risk
 
 open NamelessInteractive.Insured.Domain.Shared
+open System
 
-type RiskTypeInformation = 
+type RiskType = 
     {
+        Id: Identifier
+        Code: string
         Name: string
-        ValidityInformation: ValidityInformation
+    }
+
+type RiskProfile = 
+    {
+        Id: Identifier
+        Description: string
+        ZeroRatedIndicator: bool
+        RetroActiveDate: DateTime
+        RiskType: RiskType
     }
 
