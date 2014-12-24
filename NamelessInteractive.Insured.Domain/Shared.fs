@@ -3,6 +3,7 @@
 open System
 
 type Identifier = Identifier of Identifier :int
+type BigIdentifier = BigIdentifier of BigIdentifier : int64
 
 type TelephoneNumber = TelephoneNumber of TelephoneNumber:string
 

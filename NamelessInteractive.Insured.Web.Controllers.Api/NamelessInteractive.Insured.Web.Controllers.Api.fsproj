@@ -71,6 +71,17 @@
     <Compile Include="Risk\RiskTypeController.fs" />
     <Compile Include="Product\ProductFrequencyController.fs" />
     <Compile Include="Product\ProductController.fs" />
+    <Compile Include="PolicySection\BasisController.fs" />
+    <Compile Include="PolicySection\SasriaController.fs" />
+    <Compile Include="PolicySection\OccupationCategoryController.fs" />
+    <Compile Include="PolicySection\PolicySectionTypeController.fs" />
+    <Compile Include="PolicySection\PolicySectionController.fs" />
+    <Compile Include="Broker\BrokerCategoryController.fs" />
+    <Compile Include="Broker\BrokerTypeController.fs" />
+    <Compile Include="Broker\BrokerController.fs" />
+    <Compile Include="Supplier\SupplierPaymentTermController.fs" />
+    <Compile Include="Supplier\SupplierTypeController.fs" />
+    <Compile Include="Supplier\SupplierGroupController.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

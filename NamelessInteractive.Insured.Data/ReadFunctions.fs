@@ -60,6 +60,9 @@ let ReadDateNull (fieldName: string) (reader:IDataReader) =
 let ReadInt (fieldName: string) (reader:IDataReader) =
     reader.GetInt32(reader.GetOrdinal(fieldName))
 
+let ReadBigInt (fieldName: string) (reader:IDataReader) =
+    reader.GetInt64(reader.GetOrdinal(fieldName))
+
 let ReadIntNull (fieldName: string) (reader: IDataReader) =
     let column = reader.GetOrdinal(fieldName)
     if reader.IsDBNull(column) then

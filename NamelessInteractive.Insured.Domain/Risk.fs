@@ -9,6 +9,12 @@ type RiskType =
         Code: string
         Name: string
     }
+    static member Zero =
+        {
+            Id = Identifier(0)
+            Code = "Not Applicable"
+            Name = "Not Applicable"
+        }
 
 type RiskProfile = 
     {
@@ -18,4 +24,12 @@ type RiskProfile =
         RetroActiveDate: DateTime
         RiskType: RiskType
     }
+    static member Zero =
+        {
+            Id = Identifier(0)
+            Description = "Zero"
+            ZeroRatedIndicator = true
+            RetroActiveDate = DateTime.MinValue
+            RiskType = RiskType.Zero
+        }
 

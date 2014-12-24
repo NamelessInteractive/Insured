@@ -51,6 +51,7 @@ let ExecuteRowWithConnectionString<'T> connectionStringName commandText (paramet
     | false -> None
 
 let ParseId (id:int) = Identifier(id)
+let ParseBigId (id: int64) = BigIdentifier(id)
 
 type System.Data.IDataReader with
     member this.IsDBNull(column) =

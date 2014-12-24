@@ -49,6 +49,9 @@
     <Compile Include="DataAccess\Business.fs" />
     <Compile Include="DataAccess\Risk.fs" />
     <Compile Include="DataAccess\Product.fs" />
+    <Compile Include="DataAccess\PolicySection.fs" />
+    <Compile Include="DataAccess\Broker.fs" />
+    <Compile Include="DataAccess\Supplier.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NamelessInteractive.Insured.Domain\NamelessInteractive.Insured.Domain.fsproj">

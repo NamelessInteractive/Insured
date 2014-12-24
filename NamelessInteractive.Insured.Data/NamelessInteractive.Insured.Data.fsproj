@@ -53,6 +53,8 @@
     <Compile Include="Business.fs" />
     <Compile Include="Risk.fs" />
     <Compile Include="Product.fs" />
+    <Compile Include="PolicySection.fs" />
+    <Compile Include="Broker.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NamelessInteractive.Insured.Contracts\NamelessInteractive.Insured.Contracts.fsproj">

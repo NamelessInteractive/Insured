@@ -60,6 +60,8 @@
     <Compile Include="Rating.fs" />
     <Compile Include="Policy.fs" />
     <Compile Include="Claim.fs" />
+    <Compile Include="Broker.fs" />
+    <Compile Include="Supplier.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

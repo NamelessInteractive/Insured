@@ -33,13 +33,14 @@ type PolicySectionType =
 
 type PolicySection =
     {
-        Id: Identifier
+        Id: BigIdentifier
         Code: string
         Name: string
-        SasriaApplicable: bool
-        SasriaSI: decimal
+        SasriaApplicable: bool option
+        SasriaSI: decimal option
         SasriaNumber: string
         NoOfUnits: int
+        IsOriginal: bool
         RiskProfile: RiskProfile
         Sasria: Sasria
         Basis: Basis
